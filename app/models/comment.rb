@@ -5,6 +5,8 @@ class Comment < ApplicationRecord
   after_create :update_post_comments_counter
   before_destroy :update_comments_before_destroy
 
+  private
+
   def update_post_comments_counter
     post.increment!(:commentscounter)
   end

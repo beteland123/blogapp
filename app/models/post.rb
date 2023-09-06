@@ -10,6 +10,8 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(limit)
   end
 
+  private
+
   def increment_user_posts_count
     author.increment!(:postcounter)
   end
