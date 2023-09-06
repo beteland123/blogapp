@@ -56,6 +56,7 @@
 
 - [] **[Add migration got post, user, comment and like according the ER]**
 - [] **[Added foreign keys and indexes to ensure data integrity and optimize database queries]**
+- [ ] **Processing data in models.**
  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -197,7 +198,6 @@ rspec spec/models/like_spec.rb
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Validations and Model specs.**
-- [ ] **Processing data in models.**
 - [ ] **Setup and controllers.**
 - [ ] **Controllers specs.**
 - [ ] **Integration specs for Views and fixing n+1 problems.**
