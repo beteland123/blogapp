@@ -1,19 +1,20 @@
 class Post < ApplicationRecord
-    belongs_to :author, class_name: 'User'
-    has_many :comments
-    has_many :likes
+  belongs_to :author, class_name: 'User'
+  has_many :comments
+  has_many :likes
 
-    after_create :increment_user_posts_count
-    before_destroy :update_post_counter_before_destroy
+  after_create :increment_user_posts_count
+  before_destroy :update_post_counter_before_destroy
 
-    def recent_comments(limit = 5)
-        comments.order(created_at: :desc).limit(limit)
-    end
+  def recent_comments(limit = 5)
+    comments.order(created_at: :desc).limit(limit)
+  end
 
-    def increment_user_posts_count
-        author.increment!(:postcounter)
-    end
-    def update_post_counter_before_destroy
-        author.decrement!(:postcounter)
-    end
+  def increment_user_posts_count
+    author.increment!(:postcounter)
+  end
+
+  def update_post_counter_before_destroy
+    author.decrement!(:postcounter)
+  end
 end
