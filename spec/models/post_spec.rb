@@ -38,16 +38,16 @@ RSpec.describe Post, type: :model do
   end
 
   it 'increments author\'s post counter after creation' do
-    expect {
+    expect do
       post.save
-    }.to change { user.reload.postcounter }.by(1)
+    end.to change { user.reload.postcounter }.by(1)
   end
 
   it 'decrements author\'s post counter before destruction' do
     post.save
-    expect {
+    expect do
       post.destroy
-    }.to change { user.reload.postcounter }.by(-1)
+    end.to change { user.reload.postcounter }.by(-1)
   end
 
   describe 'Show 5 recent comments' do
@@ -60,7 +60,7 @@ RSpec.describe Post, type: :model do
       Comment.create(author: user, post:)
       Comment.create(author: user, post:)
       Comment.create(author: user, post:)
-      
+
       recent_comments = post.recent_comments(5)
       expect(recent_comments.count).to eq(5)
     end

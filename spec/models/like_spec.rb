@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  
   describe 'associations' do
-    let(:user) {User.create(name: 'John',photo: 'http/lkk',bio: 'John bio',postcounter: 0)}
+    let(:user) { User.create(name: 'John', photo: 'http/lkk', bio: 'John bio', postcounter: 0) }
 
-    let(:post) {user.posts.create(title: 'my first post', likescounter: 0,commentscounter: 0)}
-    
-    subject {Like.new(author: user, post:)}
+    let(:post) { user.posts.create(title: 'my first post', likescounter: 0, commentscounter: 0) }
+
+    subject { Like.new(author: user, post:) }
     it 'belongs to an author' do
       association = described_class.reflect_on_association(:author)
       expect(association.macro).to eq(:belongs_to)
@@ -32,5 +31,4 @@ RSpec.describe Like, type: :model do
       expect { like.destroy }.to change { post.reload.likescounter }.by(-1)
     end
   end
- 
 end

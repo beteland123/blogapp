@@ -41,50 +41,19 @@ RSpec.describe User, type: :model do
     describe '#recent_posts' do
       it 'returns the most recent posts for the user' do
         user = User.create(name: 'John', photo: 'photo.url', bio: 'his bio', postcounter: 3)
-  
+
         post1 = user.posts.build(title: 'First Post', text: 'This is the first post', created_at: Time.now)
         post1.save
-  
+
         post2 = user.posts.build(title: 'Second Post', text: 'This is the second post', created_at: Time.now)
         post2.save
-  
+
         post3 = user.posts.build(title: 'Third Post', text: 'This is the third post', created_at: Time.now)
         post3.save
-  
+
         recent_posts = user.recent_posts
-  
-        expect(recent_posts.map(&:attributes)).to eq([
-          {
-            'id' => post3.id,
-            'author_id' => user.id,
-            'title' => 'Third Post',
-            'text' => 'This is the third post',
-            'commentscounter' => 0,
-            'likescounter' => 0,
-            'created_at' => post3.created_at,
-            'updated_at' => post3.updated_at
-          },
-          {
-            'id' => post2.id,
-            'author_id' => user.id,
-            'title' => 'Second Post',
-            'text' => 'This is the second post',
-            'commentscounter' => 0,
-            'likescounter' => 0,
-            'created_at' => post2.created_at,
-            'updated_at' => post2.updated_at
-          },
-          {
-            'id' => post1.id,
-            'author_id' => user.id,
-            'title' => 'First Post',
-            'text' => 'This is the first post',
-            'commentscounter' => 0,
-            'likescounter' => 0,
-            'created_at' => post1.created_at,
-            'updated_at' => post1.updated_at
-          }
-        ])
+
+        expect(recent_posts).to eq([post3, post2, post1])
       end
     end
   end
