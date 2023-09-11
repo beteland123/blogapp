@@ -1,0 +1,32 @@
+<h1>welcome to all posts of user</h1>
+<div>
+   <div class="user">
+       <h2><%= @user.name %></h2>
+       <p>Number of posts : <%= @user.postcounter %></p>
+   </div>
+   <div>
+      <ul>
+         <% @posts.each do |post| %>
+            <div >
+                <li><%= post.title %></li>
+                <li> <%= post.text %></li>
+                <li> Comments :  <%= post.commentscounter %></li>
+                <li>Likes : <%= post.likescounter %></li>
+            </div>
+            <div>
+                 <ul>
+                     <% if post.comments.any? %>
+                     <% post.comments.each do |comment| %>
+                     <li><strong><%= comment.author.name %>:</strong> <%= comment.text %></li>
+                     <% end %>
+                     <% else %>
+                         <li>No comments yet</li>
+                     <% end %>
+                </ul>
+            </div>
+       </div>
+      <% end %>
+     </ul>
+  </div>
+
+</div>
