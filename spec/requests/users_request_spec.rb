@@ -16,18 +16,18 @@ RSpec.describe User, type: :request do
     end
   end
   describe "'Get /show" do
-    let(:user) {User.create(name: 'Helen', photo: 'https://unsplash/', bio: 'Programmer', postcounter: 0)}
+    let(:user) { User.create(name: 'Helen', photo: 'https://unsplash/', bio: 'Programmer', postcounter: 0) }
     it 'returns a successful response for specfic user' do
       get "/users/#{user.id}"
       expect(response).to have_http_status(:success)
     end
     it 'renders the correct template for specfic user' do
-        get "/users/#{user.id}"
-        expect(response).to render_template(:show)
-      end
-      it 'response body includes correct placeholder text for specfic user' do
-        get "/users/#{user.id}"
-        expect(response.body).to include('User Details')
-      end
+      get "/users/#{user.id}"
+      expect(response).to render_template(:show)
+    end
+    it 'response body includes correct placeholder text for specfic user' do
+      get "/users/#{user.id}"
+      expect(response.body).to include('User Details')
+    end
   end
 end
