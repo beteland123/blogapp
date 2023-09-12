@@ -1,9 +1,10 @@
 <h1>welcome to all users and thier respective number of posts</h1>
 <div>
   <% @users.each do |user| %>
+    <img src="<%= user.photo %>" alt="user image">
     <div class="user">
-      <h2><%= user.name %></h2>
-      <p>Number of posts : <%= user.postcounter %></p>
+      <h2><%= link_to user.name, user_path(user) %></h2>
+      <p>Number of posts : <%= link_to user.postcounter, user_path(user) %></p>
     </div>
   <% end %>
 </div>
