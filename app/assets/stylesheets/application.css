@@ -13,6 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ body{
+  background-color: #000; /* Set the background color to black */
+  color: #fff; /* Set the text color to white */
+  font-family: 'Helvetica', Arial, sans-serif; /* Set the font-family */
+  font-size: 16px; /* Set the font-size */
+  font-weight: normal; /* Set the font-weight */
+ }
+ 
+ a {
+  color:white; /* Set the link color to white */
+  text-decoration: none;
+}
 li{
   list-style-type: none;
 }
@@ -25,8 +37,9 @@ li{
    justify-content: center;
   }
   .user, .img{
+    border: 1px solid rgb(240 240 240 / 13%);
+    box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
     display: flex;
-    border: 1px solid rgba(26,54,126,0.125);
     border-radius: 0.25rem;
   }
   .img{
@@ -44,7 +57,8 @@ li{
   }
   .user-bio,.post-list{
    margin: 4%;
-    border: 1px solid rgba(26,54,126,0.125);
+   border: 1px solid rgb(240 240 240 / 13%);
+    box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
     max-width: 85%;
     padding: 1em;
     
@@ -59,12 +73,15 @@ li{
   }
   .post,.comment{
     padding: 1em;
-    border: 1px solid rgba(26,54,126,0.125);
+    border: 1px solid rgb(240 240 240 / 13%);
+    box-shadow: 0 103px 100px rgb(252 251 251 / 20%);
   }
   
 h1,.see-all-posts,.pagination{
   display: flex;
   justify-content: center;
+}
+h1{
   text-shadow: 2px 2px #e5dcdc;
 }
 .coment_like{
