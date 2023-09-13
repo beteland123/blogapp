@@ -13,38 +13,20 @@
       <h3>Bio</h3>
       <p><%= @user.bio %></p>
    </div>
-  <% @user.posts.first(3).each do |post| %>
+  <% @user.posts.each do |post| %>
+    <%= link_to user_post_path(@user, post) do %>
     <div class="post-list">
-    <h4>Post # <%= post.id %></h4>
-    <p>
-      <%= post.title %>
-    </p>
-    <p class="coment_like">
-    <a href="<%= user_posts_path(@user) %>">
-    Comments: <%= post.commentscounter %>
-  </a> ,
-      Likes : <%= post.likescounter %>
-    </p>
-  </div>
+        <h4>Post # <%= post.id %></h4>
+        <p><%= post.title %></p>
+        <p class="coment_like"> Comments: <%= post.commentscounter %> , Likes : <%= post.likescounter %> </p>
+      </div>
+    <% end %>
   <% end %>
 
 
-<div id="remaining-posts" class="hidden">
-  <% @user.posts.drop(3).each do |post| %>
-    <div class="post-list">
-    <h4>Post # <%= post.id %></h4>
-    <p>
-      <%= post.title %>
-    </p>
-    <p class="coment_like">
-   <a href="<%= user_posts_path(@user) %>">
-          Comments: <%= post.commentscounter %>
-        </a> ,
-      Likes : <%= post.likescounter %>
-    </p>
-   </div>
-  <% end %>
+
+  <div class="see-all-posts">
+  <%= link_to 'See All Posts', user_posts_path(@user) %>
 </div>
-<button id="show-all-btn">See all posts</button>
 
 </div>

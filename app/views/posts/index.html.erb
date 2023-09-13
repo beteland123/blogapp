@@ -9,28 +9,32 @@
            <p>Number of posts : <%= @user.postcounter %></p>
         </div>
    </div>
-   <div>
          <% @posts.each do |post| %>
-            <div >
-              <a href="<%= user_post_path(@user, post) %>">
+            <div class="each_post">
+            <div class="post">
+            <%= link_to user_post_path(@user, post) do %>
                   <h5>Post # <%= post.id %></h5>
-              </a>
+              
                 <p><%= post.title %></p>
-                <p> Comments :  <%= post.commentscounter %></p>
-                <p>Likes : <%= post.likescounter %></p>
+                 <p class="coment_like"> Comments: <%= post.commentscounter %> , Likes : <%= post.likescounter %> </p>
             </div>
-            <div>
+            <div class="comment">
                  <ul>
                      <% if post.comments.any? %>
                      <% post.comments.each do |comment| %>
-                     <li><strong><%= comment.author.name %>:</strong> <%= comment.text %></li>
+                     <li><strong><%= comment.author.name %> :  </strong> <%= comment.text %>  # <%= comment.id %></li>
                      <% end %>
                      <% else %>
                          <li>No comments yet</li>
                      <% end %>
                 </ul>
             </div>
+        <% end %>
+        </div>
       <% end %>
-     </div>
+     
+     <div class="pagination">
+     <%= link_to "Pagination", user_path(@user), class: "button" %>
+   </div>
 
 </div>

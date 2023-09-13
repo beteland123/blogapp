@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+li{
+  list-style-type: none;
+}
  .hidden {
     display: none;
   }
@@ -47,8 +49,20 @@
     padding: 1em;
     
   }
+  .each_post{
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+    max-width: 86%;
+    padding: 1em;
+    gap: 0.5em;
+  }
+  .post,.comment{
+    padding: 1em;
+    border: 1px solid rgba(26,54,126,0.125);
+  }
   
-h1{
+h1,.see-all-posts,.pagination{
   display: flex;
   justify-content: center;
   text-shadow: 2px 2px #e5dcdc;
