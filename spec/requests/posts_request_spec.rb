@@ -14,7 +14,7 @@ RSpec.describe Post, type: :request do
     end
     it 'response body includes correct placeholder text for specfic user' do
       get "/users/#{user.id}/posts"
-      expect(response.body).to include('welcome to all posts of user')
+      expect(response.body).to include('All posts with their comments ')
     end
   end
   describe 'Get/#show' do

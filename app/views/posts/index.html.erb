@@ -1,32 +1,40 @@
-<h1>welcome to all posts of user</h1>
+<h1>All posts with their comments </h1>
 <div>
-   <div class="user">
-       <h2><%= @user.name %></h2>
-       <p>Number of posts : <%= @user.postcounter %></p>
+   <div class="each_user">
+       <div class="img">
+           <img src="<%= @user.photo %>" alt="user image">
+        </div>
+       <div class="user">
+           <h2><%= @user.name %></h2>
+           <p>Number of posts : <%= @user.postcounter %></p>
+        </div>
    </div>
-   <div>
-      <ul>
          <% @posts.each do |post| %>
-            <div >
-                <li><%= post.title %></li>
-                <li> <%= post.text %></li>
-                <li> Comments :  <%= post.commentscounter %></li>
-                <li>Likes : <%= post.likescounter %></li>
+            <div class="each_post">
+            <div class="post">
+            <%= link_to user_post_path(@user, post) do %>
+                  <h5>Post # <%= post.id %></h5>
+              
+                <p><%= post.title %></p>
+                 <p class="coment_like"> Comments: <%= post.commentscounter %> , Likes : <%= post.likescounter %> </p>
             </div>
-            <div>
+            <div class="comment">
                  <ul>
                      <% if post.comments.any? %>
-                     <% post.comments.each do |comment| %>
-                     <li><strong><%= comment.author.name %>:</strong> <%= comment.text %></li>
+                     <% post.recent_comments.each do |comment| %>
+                     <li><strong><%= comment.author.name %> :  </strong> <%= comment.text %>  # <%= comment.id %></li>
                      <% end %>
                      <% else %>
                          <li>No comments yet</li>
                      <% end %>
                 </ul>
             </div>
-       </div>
+        <% end %>
+        </div>
       <% end %>
-     </ul>
-  </div>
+     
+     <div class="pagination">
+     <%= link_to "Pagination", user_path(@user), class: "button" %>
+   </div>
 
 </div>

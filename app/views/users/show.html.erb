@@ -1,29 +1,32 @@
 <h1>User Details</h1>
 <div>
-   <div class="user">
+   <div class="each_user">
+   <div class="img">
+         <img src="<%= @user.photo %>" alt="user image">
+    </div>
+    <div class="user">
      <h2><%= @user.name %></h2>
      <p>Number of posts : <%= @user.postcounter %></p>
+     </div>
    </div>
    <div class="user-bio">
       <h3>Bio</h3>
       <p><%= @user.bio %></p>
    </div>
-   <ul>
-  <% @user.posts.each do |post| %>
-    <li>
-      <%= post.title %>
-    </li>
-    <li>
-      <%= post.text %>
-    </li>
-    <li>
-     Comments :  <%= post.commentscounter %>
-    </li>
-    <li>
-      Likes : <%= post.likescounter %>
-    </li>
-
+  <% @user.recent_posts.each do |post| %>
+    <%= link_to user_post_path(@user, post) do %>
+    <div class="post-list">
+        <h4>Post # <%= post.id %></h4>
+        <p><%= post.title %></p>
+        <p class="coment_like"> Comments: <%= post.commentscounter %> , Likes : <%= post.likescounter %> </p>
+      </div>
+    <% end %>
   <% end %>
-</ul>
+
+
+
+  <div class="see-all-posts">
+  <%= link_to 'See All Posts', user_posts_path(@user) %>
+</div>
 
 </div>

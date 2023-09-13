@@ -1,21 +1,24 @@
 <h1>Post Details</h1>
-<h2><%= @user.name %></h2>
-<p>Number of posts : <%= @user.postcounter %></p>
-
- <div >
-      <p><%= @post.title %><p>
+ <div class="each_post" >
+  <div class="post">
+     <div>
+     <h2><%= @post.title %>  By <%= @user.name %> </h2>
+     <p class="coment_like"> Comments: <%= @post.commentscounter %> , Likes : <%= @post.likescounter %> </p>
+     </div>
+     
       <p> <%= @post.text %></p>
-      <p> Comments :  <%= @post.commentscounter %><p>
-      <p>Likes : <%= @post.likescounter %><p>
-      <ul>
+</div>
+
+      <ul class="comment">
         <% if @comments.any? %>
         <% @comments.each do |comment| %>
-             <li><strong><%= comment.author.name %>:</strong> <%= comment.text %></li>
+             <li><strong><%= comment.author.name %>:</strong> <%= comment.text %>   # <%= comment.id %></li>
         <% end %>
         <% else %>
            <li>No comments yet</li>
         <% end %>
       </ul>
+
   </div>
 
 
