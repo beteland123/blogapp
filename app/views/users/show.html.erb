@@ -1,47 +1,48 @@
 <h1>User Details</h1>
 <div>
-   <div class="user">
-   <img src="<%= @user.photo %>" alt="user image">
+   <div class="each_user">
+   <div class="img">
+         <img src="<%= @user.photo %>" alt="user image">
+    </div>
+    <div class="user">
      <h2><%= @user.name %></h2>
      <p>Number of posts : <%= @user.postcounter %></p>
+     </div>
    </div>
    <div class="user-bio">
       <h3>Bio</h3>
       <p><%= @user.bio %></p>
    </div>
-  <div class="post-list">
   <% @user.posts.first(3).each do |post| %>
-    <h5>Post # <%= post.id %></h5>
+    <div class="post-list">
+    <h4>Post # <%= post.id %></h4>
     <p>
       <%= post.title %>
     </p>
-    <p>
+    <p class="coment_like">
     <a href="<%= user_posts_path(@user) %>">
     Comments: <%= post.commentscounter %>
-  </a>
-    </p>
-    <p>
+  </a> ,
       Likes : <%= post.likescounter %>
     </p>
-
+  </div>
   <% end %>
-</div>
+
 
 <div id="remaining-posts" class="hidden">
   <% @user.posts.drop(3).each do |post| %>
-    <h5>Post # <%= post.id %></h5>
+    <div class="post-list">
+    <h4>Post # <%= post.id %></h4>
     <p>
       <%= post.title %>
     </p>
-    <p>
+    <p class="coment_like">
    <a href="<%= user_posts_path(@user) %>">
           Comments: <%= post.commentscounter %>
-        </a>
-    </p>
-    <p>
+        </a> ,
       Likes : <%= post.likescounter %>
     </p>
-
+   </div>
   <% end %>
 </div>
 <button id="show-all-btn">See all posts</button>

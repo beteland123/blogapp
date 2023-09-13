@@ -17,3 +17,44 @@
  .hidden {
     display: none;
   }
+  .index_user{
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+  }
+  .user, .img{
+    display: flex;
+    border: 1px solid rgba(26,54,126,0.125);
+    border-radius: 0.25rem;
+  }
+  .img{
+    width: 20%;
+  }
+  .user{
+    width: 70%;
+    justify-content: space-between;
+    padding: 1em;
+  }
+  .each_user{
+    display: flex;
+    gap: 1em;
+    padding: 4%;
+  }
+  .user-bio,.post-list{
+   margin: 4%;
+    border: 1px solid rgba(26,54,126,0.125);
+    max-width: 85%;
+    padding: 1em;
+    
+  }
+  
+h1{
+  display: flex;
+  justify-content: center;
+  text-shadow: 2px 2px #e5dcdc;
+}
+.coment_like{
+  display: flex;
+  justify-content: end;
+  gap: 1em;
+}
