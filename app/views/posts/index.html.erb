@@ -9,7 +9,9 @@
       <div>
          <% @posts.each do |post| %>
             <div >
-               <h5>Post # <%= post.id %></h5>
+            <a href="<%= user_post_path(@user, post) %>">
+                <h5>Post # <%= post.id %></h5>
+            </a>
                 <p><%= post.title %></p>
                 <p> Comments :  <%= post.commentscounter %></p>
                 <p>Likes : <%= post.likescounter %></p>
