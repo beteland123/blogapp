@@ -13,7 +13,7 @@
       <h3>Bio</h3>
       <p><%= @user.bio %></p>
    </div>
-  <% @user.posts.take(3).each do |post| %>
+  <% @user.recent_posts.each do |post| %>
     <%= link_to user_post_path(@user, post) do %>
     <div class="post-list">
         <h4>Post # <%= post.id %></h4>

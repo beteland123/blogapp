@@ -21,7 +21,7 @@
             <div class="comment">
                  <ul>
                      <% if post.comments.any? %>
-                     <% post.comments.each do |comment| %>
+                     <% post.recent_comments.each do |comment| %>
                      <li><strong><%= comment.author.name %> :  </strong> <%= comment.text %>  # <%= comment.id %></li>
                      <% end %>
                      <% else %>
