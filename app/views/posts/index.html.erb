@@ -30,11 +30,16 @@
                 </ul>
             </div>
         <% end %>
+        <div class="coment_like">
+          <%= link_to "Add Comment", new_user_post_comment_path(@user, post) %>
+          <%= button_to "Like💗", user_post_likes_path(@user, post_id: post.id) %>
+        </div>
+       
         </div>
       <% end %>
      
      <div class="pagination">
      <%= link_to "Pagination", user_path(@user), class: "button" %>
    </div>
-
+   <%= link_to 'New Post', new_user_post_path(@user), class: "post-button"%>
 </div>

@@ -14,8 +14,8 @@
  *= require_self
  */
 body {
-  background-color: #000; /* Set the background color to black */
-  color: #fff; /* Set the text color to white */
+  background-color: #393939; /* Set the background color to black */
+  color: #ffffff; /* Set the text color to white */
   font-family: 'Helvetica', Arial, sans-serif; /* Set the font-family */
   font-size: 16px; /* Set the font-size */
   font-weight: normal; /* Set the font-weight */
