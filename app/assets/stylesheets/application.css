@@ -20,7 +20,42 @@ body {
   font-size: 16px; /* Set the font-size */
   font-weight: normal; /* Set the font-weight */
 }
+input[type=text], select, textarea,.post-button{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
 
+/* Style the label to display next to the inputs */
+label {
+  padding: 8px 8px 8px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  margin-top: 12px;
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  margin: 3%;
+    max-width: 86%;
+    padding: 4em;
+    border: 1px solid rgba(222, 210, 210, 0.13);
+    box-shadow: 0 103px 100px rgba(142, 139, 139, 0.2);;
+}
 a {
   color: white; /* Set the link color to white */
   text-decoration: none;
@@ -80,6 +115,9 @@ li {
   max-width: 86%;
   padding: 1em;
   gap: 0.5em;
+}
+.post-button{
+  margin: 3%;
 }
 
 .post,
