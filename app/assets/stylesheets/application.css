@@ -32,6 +32,10 @@ textarea,
   box-sizing: border-box;
   resize: vertical;
 }
+img{
+
+  max-width: 10em;
+}
 
 /* Style the label to display next to the inputs */
 label {

@@ -10,8 +10,8 @@
 </div>
 
       <ul class="comment">
-        <% if @comments.any? %>
-        <% @comments.each do |comment| %>
+        <% if @post.comments.any? %>
+        <% @post.comments.each do |comment| %>
              <li><strong><%= comment.author.name %>:</strong> <%= comment.text %>   # <%= comment.id %></li>
         <% end %>
         <% else %>

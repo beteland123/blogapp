@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_user
   def index
-    @posts = @user.posts.includes(:comments)
+    @posts = @user.posts.includes(:comments, :likes, :comments => :author)
   end
 
   def show
-    @post = @user.posts.find(params[:id])
-    @comments = @post.comments
+    @post = @user.posts.includes(:comments, :likes, :comments => :author).find(params[:id])
   end
 
   def new
@@ -27,7 +26,7 @@ class PostsController < ApplicationController
           # error message
           flash.now[:error] = 'Error: Post could not be saved'
           # render new
-          render :new, locals: { post: }
+          format.html { render :new, locals: { post: @post } }
         end
       end
     end

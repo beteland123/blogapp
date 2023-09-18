@@ -9,34 +9,28 @@
            <p>Number of posts : <%= @user.postcounter %></p>
         </div>
    </div>
-         <% @posts.each do |post| %>
-            <div class="each_post">
-            <div class="post">
-            <%= link_to user_post_path(@user, post) do %>
-                  <h5>Post # <%= post.id %></h5>
-              
-                <p><%= post.title %></p>
-                 <p class="coment_like"> Comments: <%= post.commentscounter %> , Likes : <%= post.likescounter %> </p>
-            </div>
-            <div class="comment">
-                 <ul>
-                     <% if post.comments.any? %>
-                     <% post.recent_comments.each do |comment| %>
-                     <li><strong><%= comment.author.name %> :  </strong> <%= comment.text %>  # <%= comment.id %></li>
-                     <% end %>
-                     <% else %>
-                         <li>No comments yet</li>
-                     <% end %>
-                </ul>
-            </div>
+   <% @posts.each do |post| %>
+    <div class="each_post">
+      <div class="post">
+        <%= link_to user_post_path(@user, post) do %>
+          <h5>Post # <%= post.id %></h5>
+          <p><%= post.title %></p>
+          <p class="coment_like"> Comments: <%= post.commentscounter %> , Likes : <%= post.likescounter %> </p>
         <% end %>
-        <div class="coment_like">
-          <%= link_to "Add Comment", new_user_post_comment_path(@user, post) %>
-          <%= button_to "Like💗", user_post_likes_path(@user, post_id: post.id) %>
-        </div>
-       
-        </div>
-      <% end %>
+      </div>
+      <div class="comment">
+        <ul>
+          <% post.comments.each do |comment| %>
+            <li><strong><%= comment.author.name %> :  </strong> <%= comment.text %>  # <%= comment.id %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="coment_like">
+        <%= link_to "Add Comment", new_user_post_comment_path(@user, post) %>
+        <%= button_to "Like💗", user_post_likes_path(@user, post_id: post.id) %>
+      </div>
+    </div>
+  <% end %>
      
      <div class="pagination">
      <%= link_to "Pagination", user_path(@user), class: "button" %>
