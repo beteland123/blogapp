@@ -15,12 +15,13 @@
         <%= link_to user_post_path(@user, post) do %>
           <h5>Post # <%= post.id %></h5>
           <p><%= post.title %></p>
+          <p><%= post.text %></p>
           <p class="coment_like"> Comments: <%= post.commentscounter %> , Likes : <%= post.likescounter %> </p>
         <% end %>
       </div>
       <div class="comment">
         <ul>
-          <% post.comments.each do |comment| %>
+          <% post.recent_comments.each do |comment| %>
             <li><strong><%= comment.author.name %> :  </strong> <%= comment.text %>  # <%= comment.id %></li>
           <% end %>
         </ul>
