@@ -10,7 +10,7 @@ RSpec.feature 'Post show page', type: :feature do
     )
   end
   let!(:lily) do
-    User.create(name: 'lily', photo: 'l.jpg',bio: 'teacher from mexico', postcounter: 0)
+    User.create(name: 'lily', photo: 'l.jpg', bio: 'teacher from mexico', postcounter: 0)
   end
   let!(:comment1) do
     Comment.create(author: lily, post:, text: 'First post!')

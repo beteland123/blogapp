@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'User index page', type: :feature do
-  
   let!(:user1) { User.create(name: 'Menen', photo: 'menen.jpg', postcounter: 3) }
   let!(:user2) { User.create(name: 'Gelila', photo: 'gelila.jpg', postcounter: 1) }
 
@@ -23,10 +22,9 @@ RSpec.feature 'User index page', type: :feature do
     expect(page).to have_css("img[src*='menen.jpg']")
     expect(page).to have_css("img[src*='gelila.jpg']")
   end
-  
+
   it 'provides links to user show pages' do
     expect(page).to have_link(user1.name, href: user_path(user1))
     expect(page).to have_link(user2.name, href: user_path(user2))
   end
-
 end
