@@ -61,7 +61,7 @@
 - [ ] **Setup and controllers.**
 - [ ] **Controllers specs.**
 - [ ] **Integration specs for Views and fixing n+1 problems.**
-- [ ] **Add authorization rules.**
+- [ ] **Add device.**
  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
