@@ -38,7 +38,7 @@ RSpec.feature 'Post index page', type: :feature do
       expect(page).to have_selector('p', text: 'Post Text')
     end
     it 'I can see the first comments on a post.' do
-      post.comments.first(5).each do |comment|
+      post.recent_comments.each do |comment|
         expect(page).to have_content(comment.text)
       end
     end

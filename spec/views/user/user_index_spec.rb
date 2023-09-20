@@ -23,8 +23,12 @@ RSpec.feature 'User index page', type: :feature do
     expect(page).to have_css("img[src*='gelila.jpg']")
   end
 
-  it 'provides links to user show pages' do
-    expect(page).to have_link(user1.name, href: user_path(user1))
-    expect(page).to have_link(user2.name, href: user_path(user2))
+  it 'provides links to user show pages ' do
+    click_link(user1.name)
+    expect(page).to have_current_path(user_path(user1))
+  end
+  it 'provides links to user show pages ' do
+    click_link(user2.name)
+    expect(page).to have_current_path(user_path(user2))
   end
 end
