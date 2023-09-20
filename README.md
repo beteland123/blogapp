@@ -60,6 +60,7 @@
 - [] **Validations and Model specs.**
 - [ ] **Setup and controllers.**
 - [ ] **Controllers specs.**
+- [ ] **Integration specs for Views and fixing n+1 problems.**
  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -201,7 +202,7 @@ rspec spec/models/like_spec.rb
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **Integration specs for Views and fixing n+1 problems.**
+
 - [ ] **Add authorization rules.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
