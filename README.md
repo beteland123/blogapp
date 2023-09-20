@@ -61,6 +61,7 @@
 - [ ] **Setup and controllers.**
 - [ ] **Controllers specs.**
 - [ ] **Integration specs for Views and fixing n+1 problems.**
+- [ ] **Add device.**
  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -203,7 +204,7 @@ rspec spec/models/like_spec.rb
 
 
 
-- [ ] **Add authorization rules.**
+- [ ] **Add API end point.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -218,16 +219,12 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
 If you like this project, please give a ⭐️ (Thank you)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
 
 - I would like to thank Microverse for this learning opportunity.
 

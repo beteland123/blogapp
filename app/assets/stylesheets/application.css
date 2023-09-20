@@ -21,7 +21,7 @@ body {
   font-weight: normal; /* Set the font-weight */
 }
 
-input[type=text],
+input,
 select,
 textarea,
 .post-button {
@@ -53,6 +53,15 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
   float: right;
+}
+
+.check {
+  color: white;
+  padding: 4px 4px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  float: left;
 }
 
 /* Style the container */
