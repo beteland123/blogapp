@@ -54,7 +54,8 @@ input[type=submit] {
   cursor: pointer;
   float: right;
 }
-.check{
+
+.check {
   color: white;
   padding: 4px 4px;
   border: none;
