@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_user
   def index
     @posts = @user.posts.includes(:comments, :likes, comments: :author)
@@ -30,6 +31,19 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.comments.destroy_all
+    @post.likes.destroy_all
+    if @post.destroy
+      flash[:success] = 'Post deleted successfully'
+    else
+      flash[:error] = 'Error: Post could not be deleted'
+    end
+
+    redirect_to user_posts_path(current_user)
   end
 
   private
