@@ -20,6 +20,7 @@ class CommentsController < ApplicationController
       render :new
     end
   end
+
   def destroy
     @comment = Comment.find(params[:id])
     authorize! :destroy, @comment
@@ -31,6 +32,7 @@ class CommentsController < ApplicationController
     end
     redirect_to user_post_path(@user, @post)
   end
+
   private
 
   def comment_params

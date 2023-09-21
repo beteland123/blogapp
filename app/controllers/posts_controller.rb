@@ -32,7 +32,7 @@ class PostsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
     @post = Post.find(params[:id])
     @post.comments.destroy_all
