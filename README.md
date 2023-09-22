@@ -63,6 +63,7 @@
 - [ ] **Integration specs for Views and fixing n+1 problems.**
 - [ ] **Add device.**
 - [ ] **Add authorization rules**
+- [ ] **Add API end point.**
  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -205,7 +206,8 @@ rspec spec/models/like_spec.rb
 
 
 
-- [ ] **Add API end point.**
+- [ ] **Update the CRUD logic to allow editing of comments and posts.**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
