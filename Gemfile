@@ -15,7 +15,6 @@ gem 'pg', '~> 1.1'
 # API framework for Ruby
 gem 'rswag-ui'
 
-
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Authorization library for Ruby
