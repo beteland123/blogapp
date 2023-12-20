@@ -1,4 +1,4 @@
-/*
+/* 
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -14,14 +14,14 @@
  *= require_self
  */
  body {
-  background-color: #34625a; /* Set the background color to black */
-  color: #fff; /* Set the text color to white */
-  font-family: 'Helvetica', Arial, sans-serif; /* Set the font-family */
-  font-size: 16px; /* Set the font-size */
-  font-weight: normal; /* Set the font-weight */
-}
+  
+  color: #fff; 
+ 
+  font-size: 16px; 
+  font-weight: normal; 
+} */
 
-input,
+ input,
 select,
 textarea,
 .post-button {
@@ -37,13 +37,13 @@ img {
   max-width: 10em;
 }
 
-/* Style the label to display next to the inputs */
+
 label {
   padding: 8px 8px 8px 0;
   display: inline-block;
 }
 
-/* Style the submit button */
+
 input[type=submit] {
   margin-top: 12px;
   background-color: #04aa6d;
@@ -64,7 +64,7 @@ input[type=submit] {
   float: left;
 }
 
-/* Style the container */
+
 .container {
   border-radius: 5px;
   margin: 3%;
@@ -75,7 +75,7 @@ input[type=submit] {
 }
 
 a {
-  color: white; /* Set the link color to white */
+  color: white; 
   text-decoration: none;
 }
 
@@ -161,4 +161,4 @@ h1 {
   display: flex;
   justify-content: end;
   gap: 1em;
-}
+} 
