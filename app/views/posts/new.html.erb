@@ -1,3 +1,4 @@
+<div class="w-full sm:w-full border border-gray-300 rounded-lg shadow-xl text-slate-600 p-4 supports-backdrop-blur:bg-white/60">
 <h1>New Post </h1>
 <div class="container" >
 <%= form_with model: @post, url: user_posts_path(@user.id), method: :post, local: true, scope: post do |f| %>
@@ -12,4 +13,5 @@
   </div>
   <%= f.submit "Create post" %>
   <% end %>
+</div>
 </div>

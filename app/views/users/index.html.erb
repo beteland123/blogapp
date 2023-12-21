@@ -1,28 +1,29 @@
-<h1>Welcome to all users</h1>
-<div class='sign_in_user_bar'>
-      <% unless user_signed_in? %>
-        <div class="user-sign-in-link">
-          <%= link_to 'Sign in', new_user_session_path, method: :delete %>
-        </div>
-      <% end %>
-      <% if user_signed_in? %>
-        <div class="user-sign-in-link">
-          <%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %>
-        </div>
-      <% end %>
-</div>
-
-<div class="index_user">
-  <% @users.each do |user| %>
-    <div class="each_user">
-       <div class="img">
-         <img src="<%= user.photo %>" alt="user image">
-       </div>
-       <div class="user">
-       <h2><%= link_to user.name, user_path(user) %></h2>
-       <p>Number of posts : <%= link_to user.postcounter, user_path(user) %></p>
+<div class="w-full sm:w-full border border-gray-300 rounded-lg shadow-xl text-slate-600 p-4 supports-backdrop-blur:bg-white/60">
+  <h1 class="text-2xl font-bold mb-4">Latest posts</h1>
+  <div class='sign_in_user_bar'>
+    <% unless user_signed_in? %>
+      <div class="user-sign-in-link">
+        <%= link_to 'Sign in', new_user_session_path, method: :delete %>
       </div>
-    </div>
-    
-  <% end %>
+    <% end %>
+    <% if user_signed_in? %>
+      <div class="user-sign-in-link">
+        <%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="index_user">
+    <% @users.each do |user| %>
+      <div class="each_user flex items-center mb-4">
+        <div class="img mr-4">
+          <img src="<%= user.photo %>" alt="user image" class="w-16 h-16 rounded-full">
+        </div>
+        <div class="user border border-red-800 rounded-lg shadow-xl ">
+          <h2 class="text-lg font-bold"><%= link_to user.name, user_path(user) %></h2>
+          <p>Number of posts: <%= link_to user.postcounter, user_path(user) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
