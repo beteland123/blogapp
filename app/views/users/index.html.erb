@@ -7,7 +7,7 @@
       </div>
     <% end %>
     <% if user_signed_in? %>
-      <div class="user-sign-in-link">
+      <div class="user-sign-in-link text-yellow-600 bg-purple-200 border border-red-300 rounded-lg shadow-xl w-1/6 my-3 flex justify-center">
         <%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %>
       </div>
     <% end %>
@@ -15,11 +15,11 @@
 
   <div class="index_user">
     <% @users.each do |user| %>
-      <div class="each_user flex items-center mb-4">
-        <div class="img mr-4">
-          <img src="<%= user.photo %>" alt="user image" class="w-16 h-16 rounded-full">
+      <div class="flex-col flex md:flex-row items-center mb-4 border border-purple-300 rounded-lg shadow-xl">
+        <div class=" w-5/6 md:w-1/3">
+          <img src="<%= user.photo %>" alt="user image" class="w-full md:w-16 h-16 rounded-full">
         </div>
-        <div class="user border border-red-800 rounded-lg shadow-xl ">
+        <div class=" flex justify-between w-full md:w-5/6 px-1">
           <h2 class="text-lg font-bold"><%= link_to user.name, user_path(user) %></h2>
           <p>Number of posts: <%= link_to user.postcounter, user_path(user) %></p>
         </div>
