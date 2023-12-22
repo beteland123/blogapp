@@ -1,8 +1,12 @@
 <div class="w-full sm:w-full border border-gray-300 rounded-lg shadow-xl text-slate-600 p-4 supports-backdrop-blur:bg-white/60">
 <h1>Post Details</h1>
-<div class="each_post">
-  <div class="post">
-    <div>
+<div class="w-full flex justify-start">
+<%= link_to '◀️', user_path(@user) , class: "flex justify-center w-24  m-1 
+ p-4 rounded-lg transition-transform ease-in-out duration-500 group-hover:scale-75"%>
+</div>
+<div class=" w-full border border-purple-300 rounded-lg shadow-xl">
+  <div class="post border border-purple-900 rounded-lg shadow-xl">
+    <div class="">
       <h2><%= @post.title %> By <%= @user.name %></h2>
       <p class="coment_like">Comments: <%= @post.commentscounter %>, Likes: <%= @post.likescounter %></p>
     </div>
@@ -12,7 +16,7 @@
   <% end %>
   </div>
 
-  <ul class="comment">
+  <ul class="comment mx-6">
     <% if @post.comments.any? %>
       <% @post.comments.each do |comment| %>
         <li>

@@ -1,7 +1,11 @@
 <div class="w-full sm:w-full border border-gray-300 rounded-lg shadow-xl text-slate-600 p-4 supports-backdrop-blur:bg-white/60">
 <h1>All posts with their comments </h1>
+<div class="w-full flex justify-start">
+<%= link_to '◀️',  user_path(@user) , class: "flex justify-center w-24  m-1 
+ p-4 rounded-lg transition-transform ease-in-out duration-500 group-hover:scale-75"%>
+</div>
 <div>
-   <div class="each_user">
+   <div class="each_user border border-purple-300 rounded-lg shadow-xl">
        <div class="img">
            <img src="<%= @user.photo %>" alt="user image">
         </div>
@@ -11,8 +15,8 @@
         </div>
    </div>
    <% @posts.each do |post| %>
-    <div class="each_post">
-      <div class="post">
+    <div class="each_post sm:w-full  border border-purple-300 rounded-lg shadow-xl">
+      <div class="post border border-purple-300 rounded-lg shadow-xl">
         <%= link_to user_post_path(@user, post) do %>
           <h5>Post # <%= post.id %></h5>
           <p><%= post.title %></p>
@@ -23,7 +27,7 @@
           <p class="coment_like"> Comments: <%= post.commentscounter %> , Likes : <%= post.likescounter %> </p>
         <% end %>
       </div>
-      <div class="comment">
+      <div class="comment mx-7">
         <ul>
           <% post.recent_comments.each do |comment| %>
             <li><strong><%= comment.author.name %> :  </strong> <%= comment.text %>  # <%= comment.id %>
@@ -40,10 +44,11 @@
       </div>
     </div>
   <% end %>
-     
-  <%= link_to new_user_post_path(@user), class: "ml-6 bg-slate-100   hover:bg-gradient-to-r from-pink-500 to-slate-50 p-4 rounded-lg scale-50 hover:scale-75 duration-500" do %>
+  <div class="w-full flex justify-start"> 
+  <%= link_to new_user_post_path(@user), class: "flex justify-center ml-6 bg-slate-100  w-48 hover:bg-gradient-to-r from-pink-500 to-slate-50 p-4 rounded-lg transition-transform ease-in-out duration-500 group-hover:scale-75" do %>
     New Post
   <% end %>
+  </div>
      <div class="flex justify-center mt-6">
      <%= link_to "Pagination", user_path(@user), class: "button" %>
    </div>
