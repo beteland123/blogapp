@@ -7,7 +7,7 @@
       </div>
     <% end %>
     <% if user_signed_in? %>
-      <div class="user-sign-in-link text-yellow-600 bg-purple-200 border border-red-300 rounded-lg shadow-xl w-1/6 my-3 flex justify-center">
+      <div class="user-sign-in-link text-yellow-600 bg-purple-200 border border-red-300 rounded-lg shadow-xl w-40 lg:w-32 md:w-32 my-3 flex justify-center">
         <%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %>
       </div>
     <% end %>
