@@ -13,6 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Adamina&display=swap');
+ h3{
+  font-family: 'Slabo 27px', serif;
+ }
+ .paragraph_bio{
+  font-family: 'Adamina', serif;
+ }
  body {
   
   color: #fff; 

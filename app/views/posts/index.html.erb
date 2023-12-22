@@ -35,15 +35,19 @@
         </ul>
       </div>
       <div class="coment_like">
-        <%= link_to "Add Comment", new_user_post_comment_path(@user, post) %>
-        <%= button_to "Like💗", user_post_likes_path(@user, post_id: post.id) %>
+        <%= link_to " 💭", new_user_post_comment_path(@user, post) %>
+        <%= button_to "❤️", user_post_likes_path(@user, post_id: post.id) %>
       </div>
     </div>
   <% end %>
      
-     <div class="pagination">
+  <%= link_to new_user_post_path(@user), class: "ml-6 bg-slate-100   hover:bg-gradient-to-r from-pink-500 to-slate-50 p-4 rounded-lg scale-50 hover:scale-75 duration-500" do %>
+    New Post
+  <% end %>
+     <div class="flex justify-center mt-6">
      <%= link_to "Pagination", user_path(@user), class: "button" %>
    </div>
-   <%= link_to 'New Post', new_user_post_path(@user), class: "post-button"%>
+   
+  
 </div>
 </div>
