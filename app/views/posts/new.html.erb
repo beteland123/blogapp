@@ -1,5 +1,8 @@
-<div class="max-w-lg w-full bg-white sm:w-full border border-gray-300 rounded-lg shadow-xl text-slate-600 p-4 supports-backdrop-blur:bg-white/60">
+<div class="max-w-lg w-full  sm:w-full border border-gray-300 rounded-lg shadow-xl text-slate-600 p-4 supports-backdrop-blur:bg-white/60">
   <h1 class="text-2xl font-bold mb-4">New Post</h1>
+  <%= link_to '◀️', user_path(@user) , class: "flex justify-center w-24  m-1 
+ p-4 rounded-lg transition-transform ease-in-out duration-500 group-hover:scale-75"%>
+
   <div class="container">
     <%= form_with model: @post, url: user_posts_path(@user.id), method: :post, local: true, scope: post do |f| %>
       <div class="mb-4">
