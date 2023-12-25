@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <div class="bg-pink-200 min-h-screen  w-full text-slate-600">
+  <div class="relative w-full flex justify-center  items-center ">
+    <div class="fixed top-0 -left-4 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+    <div class="fixed  top-80 md:top-40 right-28 w-72 h-72 bg-amber-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+    
+    <div class="m-8 relative space-y-4 w-full">
+      
+      <div class=" rounded-lg  bg-dark space-x-8 text-dark  flex flex-col items-center">
+         <p class="notice"><%= notice %></p>
+         <p class="alert"><%= alert %></p>
+         <%= yield %>
+      </div>
+    </div>
+  </div>
+</div>
+
+   
   </body>
 </html>

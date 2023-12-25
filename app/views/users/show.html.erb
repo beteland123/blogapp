@@ -1,17 +1,24 @@
-<h1>User Details</h1>
+<div class="w-full sm:w-full border border-gray-300 rounded-lg shadow-xl text-slate-600 p-4 supports-backdrop-blur:bg-white/60">
+<h1 class="my-4">User Details</h1>
+<div class="w-full flex justify-start">
+<%= link_to '◀️', users_path , class: "flex justify-center w-24  m-1 
+ p-4 rounded-lg transition-transform ease-in-out duration-500 group-hover:scale-75"%>
+</div>
 <div>
-   <div class="each_user">
-   <div class="img">
-         <img src="<%= @user.photo %>" alt="user image">
-    </div>
+   <div class="flex-col flex md:flex-row items-center h-48 mb-4 border border-purple-300 rounded-lg shadow-xl">
+   <div class="w-32   md:w-24 m-2">
+     <% if @user.photo.attached? %>
+      <%= image_tag url_for(@user.photo), alt: "user image", class: "w-full h-auto rounded-full" %>
+    <% end %>     
+  </div>
     <div class="user">
      <h2><%= @user.name %></h2>
      <p>Number of posts : <%= @user.postcounter %></p>
      </div>
    </div>
-   <div class="user-bio">
-      <h3>Bio</h3>
-      <p><%= @user.bio %></p>
+   <div class="flex p-6 text-slate-600 w-full justify-between">
+      <h3 class="font-medium md:font-semibold ">Bio</h3>
+      <p class="pargraph-bio w-5/6 "><%= @user.bio %></p>
    </div>
   <% @user.recent_posts.each do |post| %>
     <%= link_to user_post_path(@user, post) do %>
@@ -27,6 +34,8 @@
 
   <div class="see-all-posts">
   <%= link_to 'See All Posts', user_posts_path(@user) %>
+ 
 </div>
 
+</div>
 </div>

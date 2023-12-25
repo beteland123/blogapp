@@ -12,7 +12,7 @@ RSpec.describe User, type: :request do
     end
     it 'response body includes correct placeholder text ' do
       get '/'
-      expect(response.body).to include('Welcome to all users')
+      expect(response.body).to include('Latest posts')
     end
   end
   describe "'Get /show" do

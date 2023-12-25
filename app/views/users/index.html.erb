@@ -1,28 +1,32 @@
-<h1>Welcome to all users</h1>
-<div class='sign_in_user_bar'>
-      <% unless user_signed_in? %>
-        <div class="user-sign-in-link">
-          <%= link_to 'Sign in', new_user_session_path, method: :delete %>
-        </div>
-      <% end %>
-      <% if user_signed_in? %>
-        <div class="user-sign-in-link">
-          <%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %>
-        </div>
-      <% end %>
-</div>
-
-<div class="index_user">
-  <% @users.each do |user| %>
-    <div class="each_user">
-       <div class="img">
-         <img src="<%= user.photo %>" alt="user image">
-       </div>
-       <div class="user">
-       <h2><%= link_to user.name, user_path(user) %></h2>
-       <p>Number of posts : <%= link_to user.postcounter, user_path(user) %></p>
+<div class="w-full sm:w-full border border-gray-300 rounded-lg shadow-xl text-slate-600 p-4 supports-backdrop-blur:bg-white/60">
+  <h1 class="text-2xl font-bold mb-4">Latest posts</h1>
+  <div class='sign_in_user_bar'>
+    <% unless user_signed_in? %>
+      <div class="user-sign-in-link">
+        <%= link_to 'Sign in', new_user_session_path, method: :delete %>
       </div>
-    </div>
-    
-  <% end %>
+    <% end %>
+    <% if user_signed_in? %>
+      <div class="user-sign-in-link text-yellow-600 bg-purple-200 border border-red-300 rounded-lg shadow-xl w-40 lg:w-32 md:w-32 my-3 flex justify-center">
+        <%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="index_user">
+    <% @users.each do |user| %>
+      <div class="flex-col justify-between h-48 flex md:flex-row items-center mb-4 border border-purple-300 rounded-lg shadow-xl">
+        <div class="w-32   md:w-24 m-2">
+        <% if user.photo.attached? %>
+        <%= image_tag url_for(user.photo), alt: "user image", class: "w-full h-auto rounded-full" %>
+      <% end %>
+      
+        </div>
+        <div class=" flex justify-between w-full md:w-5/6 px-1">
+          <h2 class="text-lg font-bold"><%= link_to user.name, user_path(user) %></h2>
+          <p>Number of posts: <%= link_to user.postcounter, user_path(user) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
