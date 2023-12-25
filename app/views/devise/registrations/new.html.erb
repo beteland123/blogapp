@@ -20,9 +20,12 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", class: "w-full p-2 border rounded-md" %>
     </div>
 
-    <div class="mb-4">
-      <%= f.file_field :photo, class: "w-full p-2 border rounded-md" %>
-    </div>
+    <div class="mb-4 rounded-md border border-gray-300 overflow-hidden">
+      <label for="photo" class="block text-sm font-bold mb-2 txt-slate-500 p-2">Profile Photo</label>
+      <%= f.file_field :photo, class: "w-full p-2" %>
+      </div>
+
+  
 
     <div class="mb-4">
       <%= f.text_area :bio, placeholder: "Short Bio", class: "w-full p-2 border rounded-md", rows: 3 %>

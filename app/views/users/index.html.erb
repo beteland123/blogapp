@@ -15,8 +15,8 @@
 
   <div class="index_user">
     <% @users.each do |user| %>
-      <div class="flex-col flex md:flex-row items-center mb-4 border border-purple-300 rounded-lg shadow-xl">
-        <div class="w-32   md:w-24">
+      <div class="flex-col justify-between h-48 flex md:flex-row items-center mb-4 border border-purple-300 rounded-lg shadow-xl">
+        <div class="w-32   md:w-24 m-2">
         <% if user.photo.attached? %>
         <%= image_tag url_for(user.photo), alt: "user image", class: "w-full h-auto rounded-full" %>
       <% end %>

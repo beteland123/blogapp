@@ -5,8 +5,8 @@
  p-4 rounded-lg transition-transform ease-in-out duration-500 group-hover:scale-75"%>
 </div>
 <div>
-   <div class="flex-col flex md:flex-row items-center mb-4 border border-purple-300 rounded-lg shadow-xl">
-   <div class="w-32   md:w-24">
+   <div class="flex-col flex md:flex-row items-center h-48 mb-4 border border-purple-300 rounded-lg shadow-xl">
+   <div class="w-32   md:w-24 m-2">
      <% if @user.photo.attached? %>
       <%= image_tag url_for(@user.photo), alt: "user image", class: "w-full h-auto rounded-full" %>
     <% end %>     
