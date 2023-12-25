@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: :author_id
   validates :name, presence: true
   validates :postcounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  has_one_attached :photo  # New field for user's photo
+  attribute :bio, :text    # New field for user's bio
 
   def admin?
     role == 'admin'
